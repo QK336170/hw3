@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Login </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">           
+    </head>
+
+
+
+    <style>
+      body, html {
+        height: 100%;
+        margin: 0;
+      }
+      
+      .bgimg {
+        background-image: url('./static/images/112097.jpg');
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        color: white;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 25px;
+        top: -13%;
+      }
+      
+      .topleft {
+        position: absolute;
+        top: 0;
+        left: 16px;
+      }
+      
+      .bottomleft {
+        position: absolute;
+        bottom: 0;
+        left: 16px;
+      }
+      
+      .middle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      
+      hr {
+        margin: auto;
+        width: 40%;
+      }
+      </style>
+
+
+
+    <body></br></br></br></br></br>
+      <div class="bgimg">
+        <div class="topleft">
+          <p>Logo</p>
+        </div>
+
+        <div class="bottomleft">
+          <p>Some text</p>
+        </div>
+      </div>
+
+        <div align="center" style="position:absolute; top:8%; left: 33.5%;">
+          <div align="center" class="border">
+             <div class="header">
+                <h1 class="word">Login</h1>
+             </div></br></br></br>
+            <h2 class="word">
+                <form action="{{ url_for('login') }}" method="post">
+                  <div class="msg">{{ msg }}</div>
+                    <input id="username" name="username" type="text" placeholder="Enter Your Username" class="textbox"/></br></br>
+                    <input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox"/></br></br></br>
+                    <input type="submit" class="btn" value="Sign In"></br></br>
+                </form>
+            </h2>
+            <p class="bottom2">No account?  <a class="bottom" href="{{url_for('register')}}"> Sign Up here</a></p>
+          </div>
+        </div>
+    </body>
+</html>
